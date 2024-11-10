@@ -19,4 +19,4 @@ jobs:
       - name: Run Lychee link checker
         uses: lycheeverse/lychee-action@v1.5.0
         with:
-          args: --verbose --no-progress --output markdown --include-external
+          args: --verbose --no-progress --output markdown --include-external .
