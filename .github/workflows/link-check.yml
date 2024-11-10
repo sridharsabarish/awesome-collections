@@ -16,14 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Rust
-        uses: actions/setup-rust@v1
+      - name: Run Lychee link checker
+        uses: lycheeverse/lychee-action@v1.5.0
         with:
-          rust-version: stable
-
-      - name: Install Lychee via cargo
-        run: cargo install lychee
-
-      - name: Run Lychee link checker with verbose output
-        run: |
-          lychee --verbose --no-progress --include-external --exclude-mail --output markdown ./
+          args: --verbose --no-progress --output markdown --include-external
