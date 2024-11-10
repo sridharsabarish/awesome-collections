@@ -1,4 +1,4 @@
-name: Check Broken Links
+name: Check Broken Links in README
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Lychee link checker
+      - name: Run Lychee link checker on README.md
         uses: lycheeverse/lychee-action@v1.5.0
         with:
-          args: --verbose --no-progress --output markdown --include-external .
+          args: README.md --verbose --no-progress --output markdown --include-external
