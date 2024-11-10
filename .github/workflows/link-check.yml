@@ -16,12 +16,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Lychee
-        run: |
-          curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-linux-x86_64.tar.gz | tar -xz
-          chmod +x lychee
-          sudo mv lychee /usr/local/bin/
+      - name: Set up Rust
+        uses: actions/setup-rust@v1
+        with:
+          rust-version: stable
+
+      - name: Install Lychee via cargo
+        run: cargo install lychee
 
       - name: Run Lychee link checker with verbose output
         run: |
-          lychee --verbose --no-progress --exit-on-error --output markdown --include-external --exclude-mail ./
+          lychee --verbose --no-progress --include-external --exclude-mail --output markdown ./
