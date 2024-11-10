@@ -1,5 +1,5 @@
 # Life Decisions
-* [Buy vs Rent Calculator - nytimes](https://www.n2123ytimes.com/interactive/2024/upshot/buy-rent-calculator.html)
+* [Buy vs Rent Calculator - nytimes](https://www.nytimes.com/interactive/2024/upshot/buy-rent-calculator.html)
 # Travel
 - [Azair](https://www.azair.eu/)  - Cheap flights
 # Search
