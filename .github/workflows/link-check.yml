@@ -16,7 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run Lychee link checker
-        uses: lycheeverse/lychee-action@v1.5.0
-        with:
-          args: --verbose --exclude-mail --output markdown ./  # Outputs in markdown format
+      - name: Install Lychee
+        run: |
+          curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-linux-x86_64.tar.gz | tar -xz
+          chmod +x lychee
+          sudo mv lychee /usr/local/bin/
+
+      - name: Run Lychee link checker with verbose output
+        run: |
+          lychee --verbose --no-progress --exit-on-error --output markdown --include-external --exclude-mail ./
