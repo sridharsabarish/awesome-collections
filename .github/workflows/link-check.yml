@@ -1,0 +1,19 @@
+name: Check Broken Links
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run link checker
+        uses: lycheeverse/lychee-action@v1.5.0
+        with:
+          args: --verbose --exclude-mail
